@@ -69,3 +69,53 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+
+/* Super Hero Overwrite styles
+-------------------------------------------------- */
+.bg-nav-super {
+  background-color: #d50000;
+}
+.navbar-super {
+  color: #fff;
+}
+
+.navbar-super a {
+  color: #fff;
+}
+
+.bg-super-primary {
+  background-color: #d50000;
+  color: #fff;
+}
+
+.bg-super-secondary {
+  background-color: #1e88e5;
+  color: #000
+}
+
+.super-font {
+  font-family: 'Knewave', cursive;
+}
+
+
+.card-rimmer {
+  height: 100%;
+  border: 3px solid #fafafa;
+}
+.card-body-rimmer {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.img-rimmer {
+  border-radius: 12px;
+  border: 3px solid #000;
+}
+
+.super-primary-muted {
+  background-color: #ff5131;
+  color: #fff;
+}
+footer a {
+  color: #fff;
+}
