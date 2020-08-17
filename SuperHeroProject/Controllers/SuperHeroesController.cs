@@ -47,9 +47,11 @@ namespace SuperHeroProject.Controllers
         {
             try
             {
+                _context.SuperHeroes.Add(createdHero);
+                var refSuperHero = _context.Entry(createdHero);
+                _context.SaveChangesAsync();
 
-
-                return RedirectToAction(nameof(Index));
+                return View("Details", refSuperHero.Entity);
             }
             catch
             {
