@@ -89,7 +89,8 @@ namespace SuperHeroProject.Controllers
         // GET: SuperHeroesController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            SuperHero hero = _context.SuperHeroes.Where(s => s.Id == id).FirstOrDefault();
+            return View(hero);
         }
 
         // POST: SuperHeroesController/Delete/5
