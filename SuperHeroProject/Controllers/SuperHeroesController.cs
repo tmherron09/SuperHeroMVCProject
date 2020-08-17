@@ -49,7 +49,7 @@ namespace SuperHeroProject.Controllers
             {
                 _context.SuperHeroes.Add(createdHero);
                 var refSuperHero = _context.Entry(createdHero);
-                _context.SaveChangesAsync();
+                _context.SaveChanges();
 
                 return View("Details", refSuperHero.Entity);
             }
@@ -70,11 +70,15 @@ namespace SuperHeroProject.Controllers
         // POST: SuperHeroesController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, SuperHero heroToEdit)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                _context.SuperHeroes.Update(heroToEdit);
+                _context.SaveChanges();
+
+
+                return View("Details", heroToEdit);
             }
             catch
             {
