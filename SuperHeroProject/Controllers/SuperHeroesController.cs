@@ -21,14 +21,14 @@ namespace SuperHeroProject.Controllers
         // GET: SuperHeroesController
         public ActionResult Index()
         {
-            List<SuperHero> allSuperHeroes = _context.SuperHeroes.ToList();
+            var allSuperHeroes = _context.SuperHeroes.ToList();
             return View(allSuperHeroes);
         }
 
         // GET: SuperHeroesController/Details/5
         public ActionResult Details(int id)
         {
-            SuperHero selectedSuperHero = _context.SuperHeroes.Where(s => s.Id == id).FirstOrDefault();
+            var selectedSuperHero = _context.SuperHeroes.Where(s => s.Id == id).FirstOrDefault();
             return View(selectedSuperHero);
         }
 
@@ -62,7 +62,7 @@ namespace SuperHeroProject.Controllers
         // GET: SuperHeroesController/Edit/5
         public ActionResult Edit(int id)
         {
-            SuperHero hero = _context.SuperHeroes.Where(s => s.Id == id).FirstOrDefault();
+            var hero = _context.SuperHeroes.Where(s => s.Id == id).FirstOrDefault();
 
             return View(hero);
         }
@@ -74,9 +74,9 @@ namespace SuperHeroProject.Controllers
         {
             try
             {
+                heroToEdit.Id = id;
                 _context.SuperHeroes.Update(heroToEdit);
                 _context.SaveChanges();
-
 
                 return View("Details", heroToEdit);
             }
