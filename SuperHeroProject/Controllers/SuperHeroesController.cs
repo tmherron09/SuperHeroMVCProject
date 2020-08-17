@@ -62,7 +62,9 @@ namespace SuperHeroProject.Controllers
         // GET: SuperHeroesController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            SuperHero hero = _context.SuperHeroes.Where(s => s.Id == id).FirstOrDefault();
+
+            return View(hero);
         }
 
         // POST: SuperHeroesController/Edit/5
