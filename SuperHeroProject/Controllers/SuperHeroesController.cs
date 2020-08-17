@@ -43,7 +43,7 @@ namespace SuperHeroProject.Controllers
         // POST: SuperHeroesController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(SuperHero createdHero)
+        public ActionResult Create([Bind("SuperHeroName,AlterEgo,PrimaryAbility,SecondaryAbility,Catchphrase")]SuperHero createdHero)
         {
             try
             {
@@ -70,7 +70,7 @@ namespace SuperHeroProject.Controllers
         // POST: SuperHeroesController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, SuperHero heroToEdit)
+        public ActionResult Edit(int id, [Bind("SuperHeroName,AlterEgo,PrimaryAbility,SecondaryAbility,Catchphrase")] SuperHero heroToEdit)
         {
             try
             {
